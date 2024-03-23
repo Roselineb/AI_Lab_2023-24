@@ -1,6 +1,6 @@
 # Ex.No: 10  Logic Programming –  Simple queries from facts and rules
-### DATE:                                                                            
-### REGISTER NUMBER : 
+### DATE:09/03/2024                                                                           
+### REGISTER NUMBER : 212221220046
 ### AIM: 
 To write a prolog program to find the answer of query. 
 ###  Algorithm:
@@ -64,9 +64,29 @@ Consider the statement <br>
 “This is a crime for an American to sell weapons to hostile nations. The Nano , enemy of America has some missiles and its missiles were sold it by Colonal West who is an American” <br> 
 Convert to Clause form and prove west is criminal by using Prolog.<br> 
 ### Program:
+```
+criminal(X):-
+	american(X),
+	weapon(Y),
+	hostile(Z),
+	sells(X,Y,Z).
+weapon(Y):-
+                 missile(Y).
+hostile(Z):-
+                 enemy(Z,X).
 
+sells(west,Y,nano):-
+	missile(Y),
+	owns(nano,Y).
+
+missile(m).
+owns(nano,m).
+enemy(nano,america).
+american(west).
+```
 
 ### Output:
+![image](https://github.com/Roselineb/AI_Lab_2023-24/assets/128909895/59171e85-7ddf-4d0f-bf16-ba8244467bd3)
 
 ### Result:
 Thus the prolog programs were executed successfully and the answer of query was found.
